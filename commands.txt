@@ -1,0 +1,14 @@
+# start server
+node index.js
+
+# open ngrok.exe found inside the Download folder and forward the server online (copy the new link in the app)
+ngrok.exe http 3000
+
+# open a new terminal
+cd C:\Users\Prisco\Desktop\Università\2. Magistrale\Anno 2\MACC\Project\server
+
+# send the request
+curl -X POST -F "image=@./TEST/image1.jpg" http://localhost:3000/upload
+
+# send the request and measure the total time
+curl -X POST -F "image=@./TEST/image1.jpg" http://localhost:3000/upload -w "\nTotal time: %{time_total} seconds\n"
